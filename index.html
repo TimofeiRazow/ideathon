@@ -606,7 +606,7 @@
                     </svg>
                 </div>
                 <h3 id="profile-name">Пользователь</h3>
-                <p class="profile-email">user@example.com</p>
+                <p class="profile-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7005031502301508111d001c155e131f1d">[email&#160;protected]</a></p>
             </div>
             
             <div class="stats-grid">
@@ -629,11 +629,11 @@
                     <span class="menu-text"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-727 256-544l-56-56 280-280 280 280-56 57-184-184v287h-80v-287Zm0 487v-120h80v120h-80Zm0 160v-80h80v80h-80Z"/></svg> Мои цели</span>
                     <span>→</span>
                 </button>
-                <button class="menu-item">
-                    <span class="menu-text"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Z"/></svg> Прогресс</span>
+                <button class="menu-item" onclick="goToScreen('analytics')">
+                    <span class="menu-text"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Z"/></svg> Аналитика</span>
                     <span>→</span>
                 </button>
-                <button class="menu-item">
+                <button class="menu-item" onclick="goToScreen('settings')">
                     <span class="menu-text"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg> Настройки</span>
                     <span>→</span>
                 </button>
@@ -676,6 +676,247 @@
         </nav>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <!-- Mood Entry Screen -->
+    <div class="screen" id="mood-entry">
+        <div class="container">
+            <button class="btn-back" onclick="goToScreen('home')">← Назад</button>
+            
+            <h2 class="page-title">Запись настроения</h2>
+            <p class="subtitle">Расскажите, как вы себя чувствуете</p>
+            
+            <div class="mood-entry-form">
+                <!-- Mood Selection -->
+                <div class="form-section">
+                    <label class="form-label">Настроение</label>
+                    <div class="mood-selection-grid">
+                        <div class="mood-option" data-mood="happy">
+                            <span class="mood-emoji-large">😊</span>
+                            <span class="mood-label">Счастливый</span>
+                        </div>
+                        <div class="mood-option" data-mood="calm">
+                            <span class="mood-emoji-large">😌</span>
+                            <span class="mood-label">Спокойный</span>
+                        </div>
+                        <div class="mood-option" data-mood="sad">
+                            <span class="mood-emoji-large">😔</span>
+                            <span class="mood-label">Грустный</span>
+                        </div>
+                        <div class="mood-option" data-mood="anxious">
+                            <span class="mood-emoji-large">😰</span>
+                            <span class="mood-label">Тревожный</span>
+                        </div>
+                        <div class="mood-option" data-mood="angry">
+                            <span class="mood-emoji-large">😠</span>
+                            <span class="mood-label">Злой</span>
+                        </div>
+                        <div class="mood-option" data-mood="tired">
+                            <span class="mood-emoji-large">😴</span>
+                            <span class="mood-label">Уставший</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Time Display -->
+                <div class="form-section">
+                    <label class="form-label">Текущее время</label>
+                    <div class="time-display" id="current-time">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span id="time-text">--:--</span>
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <div class="form-section">
+                    <label class="form-label">Что произошло?</label>
+                    <textarea 
+                        id="mood-description" 
+                        class="mood-textarea" 
+                        placeholder="Опишите, что случилось и как вы себя чувствуете..."
+                        rows="6"
+                    ></textarea>
+                </div>
+                
+                <!-- Save Button -->
+                <button class="btn-primary" onclick="saveMoodEntry()">
+                    Сохранить запись
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div class="screen" id="settings">
+        <div class="container">
+            <button class="btn-back" onclick="goToScreen('profile')">← Назад</button>
+            
+            <h2 class="page-title">Настройки</h2>
+            
+            <div class="settings-list">
+                <!-- Notifications -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">Уведомления</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <div class="setting-title">Напоминания о настроении</div>
+                            <div class="setting-description">Получать напоминания записывать настроение</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mood-reminders" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <div class="setting-title">Ежедневные задачи</div>
+                            <div class="setting-description">Уведомления о новых задачах</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="task-notifications" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Privacy -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">Конфиденциальность</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <div class="setting-title">Аналитика использования</div>
+                            <div class="setting-description">Помогите улучшить приложение</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="analytics" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Account -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">Аккаунт</h3>
+                    <button class="setting-button">
+                        <span>Изменить профиль</span>
+                        <span>→</span>
+                    </button>
+                    <button class="setting-button">
+                        <span>Сменить пароль</span>
+                        <span>→</span>
+                    </button>
+                </div>
+                
+                <!-- App Info -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">О приложении</h3>
+                    <div class="app-info">
+                        <p>Версия 1.0.0</p>
+                        <p>© 2024 Meyo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Screen -->
+    <div class="screen" id="analytics">
+        <div class="container">
+            <button class="btn-back" onclick="goToScreen('profile')">← Назад</button>
+            
+            <h2 class="page-title">Аналитика настроения</h2>
+            <p class="subtitle">Отслеживайте свое эмоциональное состояние</p>
+            
+            <!-- Time Period Selector -->
+            <div class="period-selector">
+                <button class="period-btn active" data-period="week">Неделя</button>
+                <button class="period-btn" data-period="month">Месяц</button>
+                <button class="period-btn" data-period="year">Год</button>
+            </div>
+            
+            <!-- Mood Chart -->
+            <div class="analytics-card">
+                <h3 class="analytics-card-title">График настроения</h3>
+                <div class="mood-chart">
+                    <canvas id="moodChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Mood Distribution -->
+            <div class="analytics-card">
+                <h3 class="analytics-card-title">Распределение настроений</h3>
+                <div class="mood-distribution">
+                    <div class="mood-stat">
+                        <div class="mood-stat-header">
+                            <span class="mood-emoji-small">😊</span>
+                            <span class="mood-stat-label">Счастливый</span>
+                        </div>
+                        <div class="mood-stat-bar">
+                            <div class="mood-stat-fill" style="width: 45%" data-color="#48BB78"></div>
+                        </div>
+                        <span class="mood-stat-value">45%</span>
+                    </div>
+                    <div class="mood-stat">
+                        <div class="mood-stat-header">
+                            <span class="mood-emoji-small">😌</span>
+                            <span class="mood-stat-label">Спокойный</span>
+                        </div>
+                        <div class="mood-stat-bar">
+                            <div class="mood-stat-fill" style="width: 30%" data-color="#4299E1"></div>
+                        </div>
+                        <span class="mood-stat-value">30%</span>
+                    </div>
+                    <div class="mood-stat">
+                        <div class="mood-stat-header">
+                            <span class="mood-emoji-small">😔</span>
+                            <span class="mood-stat-label">Грустный</span>
+                        </div>
+                        <div class="mood-stat-bar">
+                            <div class="mood-stat-fill" style="width: 15%" data-color="#718096"></div>
+                        </div>
+                        <span class="mood-stat-value">15%</span>
+                    </div>
+                    <div class="mood-stat">
+                        <div class="mood-stat-header">
+                            <span class="mood-emoji-small">😰</span>
+                            <span class="mood-stat-label">Тревожный</span>
+                        </div>
+                        <div class="mood-stat-bar">
+                            <div class="mood-stat-fill" style="width: 10%" data-color="#ED8936"></div>
+                        </div>
+                        <span class="mood-stat-value">10%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Entries -->
+            <div class="analytics-card">
+                <h3 class="analytics-card-title">Последние записи</h3>
+                <div id="recent-entries" class="recent-entries">
+                    <!-- Entries will be dynamically added here -->
+                </div>
+            </div>
+            
+            <!-- Insights -->
+            <div class="analytics-card insights-card">
+                <h3 class="analytics-card-title">Инсайты</h3>
+                <div class="insight-item">
+                    <span class="insight-icon">📈</span>
+                    <p>Ваше настроение улучшилось на 20% за последнюю неделю</p>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-icon">⭐</span>
+                    <p>Вы чаще чувствуете себя счастливым по утрам</p>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-icon">💪</span>
+                    <p>7 дней подряд вы записываете свое настроение!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
